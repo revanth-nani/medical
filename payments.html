@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payments – Medico Hub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {background:linear-gradient(110deg,#ece9e6,#ffffff);font-family:'Segoe UI',sans-serif;margin:0;padding:0;}
+        .navbar {
+            display: flex; justify-content: space-between; align-items: center;
+            background: #3b4252; color: #fff; padding:18px 28px;}
+        .navbar h2 {margin:0;font-size:2em;}
+        .nav-links {display:flex;gap:31px;}
+        .nav-links a {color:#fff;text-decoration:none;font-size:1.14em;transition:color 0.3s;}
+        .nav-links a:hover {color: #bdcadf;}
+        header {background:#424874;color:#fff;padding:18px 0 8px 0;text-align:center;}
+        .payment-container {
+            max-width:460px;margin:53px auto;
+            background:#fff;border-radius:17px;box-shadow:0 5px 26px rgba(0,0,0,0.10);padding:35px;
+            text-align:left;
+        }
+        h2 {color:#2d3140;}
+        label {display:block;margin-bottom:6px;color:#2d3140;font-weight:600;}
+        input,select {
+            width:100%;padding:10px;margin-bottom:16px;
+            border-radius:6px;border:1px solid #ccc;font-size:1em;background:#f4f7f9;
+        }
+        .btn {
+            margin-top:23px;padding:13px 38px;background:#3b4252;color:#fff;border:none;border-radius:8px;font-size:1.10em;cursor:pointer;transition:background 0.3s;
+        }
+        .btn:hover {background:#56b1e9;}
+        .pay-img {display:block;margin:0 auto 21px auto;width:84px;}
+        .info {font-size:1.05em;color:#2d3140;margin-bottom:8px;}
+        @media(max-width:700px){.payment-container{padding:18px;}}
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h2>Medico Hub</h2>
+        <div class="nav-links">
+            <a href="index">Home</a>
+            <a href="products">Medicines</a>
+            <a href="payments">Payments</a>
+            <a href="thankyou">Thank You</a>
+        </div>
+    </div>
+    <header>
+        <h1>Payments</h1>
+        <p>100% Secure, Fast Checkout.</p>
+    </header>
+    <div class="payment-container">
+        <img class="pay-img" src="https://cdn-icons-png.flaticon.com/512/2920/2920481.png" alt="Payment Image">
+        <h2>Enter Your Details</h2>
+        <div class="info">Safe & SSL encrypted</div>
+        <form onsubmit="event.preventDefault();window.location.href='thankyou';">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter Name" required>
+            <label for="card">Card Number</label>
+            <input type="number" id="card" name="card" placeholder="XXXX XXXX XXXX XXXX" required>
+            <label for="expiry">Expiry</label>
+            <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required>
+            <label for="cvv">CVV</label>
+            <input type="number" id="cvv" name="cvv" placeholder="123" required>
+            <label for="phone">Mobile Number</label>
+            <input type="text" id="phone" name="phone" placeholder="88XXXXXXXX" required>
+            <button type="submit" class="btn">Pay Now</button>
+        </form>
+        <div class="info">Contact our support for payment help!</div>
+    </div>
+</body>
+</html>
