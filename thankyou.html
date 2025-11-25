@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thank You – Medico Hub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {background:linear-gradient(120deg,#b1f1b1,#b2d2fa);font-family:'Segoe UI',sans-serif;margin:0;padding:0;text-align:center;}
+        .navbar {
+            display:flex;justify-content:space-between;align-items:center;background:#3b4252;color:#fff;padding:18px 28px;}
+        .navbar h2 {margin:0;font-size:2em;}
+        .nav-links {display:flex;gap:31px;}
+        .nav-links a {color:#fff;text-decoration:none;font-size:1.14em;transition:color 0.3s;}
+        .nav-links a:hover {color: #bdcadf;}
+        .thankyou-container {
+            margin:85px auto 0 auto;background:#fff;padding:49px 27px 39px 27px;border-radius:17px;
+            box-shadow:0 6px 31px rgba(0,0,0,0.13);max-width:420px;
+        }
+        .thx-img {width:86px;margin-bottom:11px;}
+        h2 {color:#2d3140;font-size:2em;}
+        p {font-size:1.14em;color:#194973;line-height:1.52em;}
+        .btn {margin-top:23px;padding:12px 36px;background:#3b4252;color:#fff;border:none;border-radius:9px;font-size:1.17em;cursor:pointer;transition:background 0.3s;}
+        .btn:hover {background:#194973;}
+        .order-info {margin-top:15px;color:#2d3140;font-size:1.10em;background:#f5f5f578;border-radius:7px;padding:8px 8px;}
+        @media(max-width:600px){.thankyou-container{width:94vw;padding:4vw 2vw;}}
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h2>Medico Hub</h2>
+        <div class="nav-links">
+            <a href="index">Home</a>
+            <a href="products">Medicines</a>
+            <a href="payments">Payments</a>
+            <a href="thankyou">Thank You</a>
+        </div>
+    </div>
+    <div class="thankyou-container">
+        <img class="thx-img" src="https://cdn-icons-png.flaticon.com/512/942/942748.png" alt="Thank you icon">
+        <h2>Thank You for Your Purchase!</h2>
+        <p>Your order is confirmed.<br>We appreciate your business and wish you good health!</p>
+        <div class="order-info">
+            Order No: #MH<span id="order">202511</span><br>
+            Need help? <a href="mailto:support@medicohub.in">Contact Support</a>
+        </div>
+        <button class="btn" onclick="window.location.href='index'">Shop More</button>
+    </div>
+</body>
+</html>
