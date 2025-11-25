@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Medico Hub – Medicines</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { background:linear-gradient(100deg,#cfd9df,#e2ebf0);font-family:'Segoe UI',sans-serif;margin:0;padding:0;min-height:100vh;}
+        .navbar {
+            display: flex; justify-content: space-between; align-items: center;
+            background: #2d3140; color: #fff; padding:18px 28px;}
+        .navbar h2 {margin:0;font-size:2em;}
+        .nav-links {display:flex;gap:31px;}
+        .nav-links a {color:#fff;text-decoration:none;font-size:1.14em;transition:color 0.3s;}
+        .nav-links a:hover {color: #bdcadf;}
+        .cart-counter {background:#fff;color:#2d3140;border-radius:50%;padding:4px 13px;font-size:1.06em;font-weight:700;margin-left:15px;border:2px solid #56b1e9;}
+        header {background:#424874;color:#fff;padding:18px 0 8px 0;text-align:center;}
+        .product-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:34px;max-width:1040px;margin:47px auto 18px auto;padding:0 18px;}
+        .product {background:#fff;border-radius:15px;box-shadow:0 4px 14px rgba(0,0,0,0.11);padding:22px;text-align:center;transition:transform 0.2s;position:relative;}
+        .product:hover {transform:translateY(-5px) scale(1.025);}
+        .product img {width:100%;max-width:120px;border-radius:10px;}
+        .product h3 {margin:17px 0 5px 0;color:#194973;}
+        .product p {font-size:1.07em;color:#347b59;}
+        .cart-btn {margin-top:14px;padding:10px 18px;background:#194973;color:#fff;border:none;border-radius:7px;font-size:1em;cursor:pointer;font-weight:600;transition:background 0.3s;}
+        .cart-btn:active {background:#21a073;}
+        .added-msg {color: #54cb58; font-size:0.97em; padding-top:4px;}
+        .btn {
+            margin:42px 0 22px 0;padding:14px 38px;background:#194973;color:#fff;border:none;border-radius:9px;font-size:1.14em;cursor:pointer;transition:background 0.3s;}
+        .btn:disabled {background:#a8b0c2;color:#fff;cursor:not-allowed;}
+        .about-products {text-align:center;font-size:1.17em;color:#3b5056;margin-bottom:15px;}
+        .brands-row {display:flex;justify-content:center;gap:20px;margin-bottom:27px;}
+        .brand-logo {width:68px;height:40px;object-fit:contain;background:#fff;border-radius:7px;box-shadow:0 2px 8px rgba(0,0,0,0.07);padding:5px;}
+        @media(max-width:800px){.product-grid{grid-template-columns:1fr;}.brands-row{flex-direction:column;align-items:center;gap:10px;}}
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h2>Medico Hub</h2>
+        <div class="nav-links">
+            <a href="index">Home</a>
+            <a href="products">Medicines</a>
+            <a href="payments">Payments</a>
+            <a href="thankyou">Thank You</a>
+            <span>🛒<span class="cart-counter" id="cartCounter">0</span></span>
+        </div>
+    </div>
+    <header>
+        <h1>Our Popular Medicines</h1>
+        <p>Buy with confidence – only certified products from the best medical brands.</p>
+    </header>
+    <div class="brands-row">
+        <img class="brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Abbott_logo.svg/2560px-Abbott_logo.svg.png" alt="Abbott">
+        <img class="brand-logo" src="https://upload.wikimedia.org/wikipedia/commons/6/62/Sun_Pharma_logo.png" alt="Sun Pharma">
+        <img class="brand-logo" src="https://upload.wikimedia.org/wikipedia/en/3/37/Cipla_logo.png" alt="Cipla">
+        <img class="brand-logo" src="https://upload.wikimedia.org/wikipedia/en/5/57/Dr_Reddy%27s_Laboratories_logo.png" alt="Dr Reddy">
+    </div>
+    <div class="about-products">
+        Search, select, and add medicines to your cart. Easy checkout and quick delivery!
+    </div>
+    <main class="product-grid">
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1588776814546-875887f507d2?auto=format&fit=crop&w=400&q=80" alt="Paracetamol">
+            <h3>Paracetamol Tablets</h3>
+            <p>₹50 (10 tablets)<br>Brand: Cipla</p>
+            <button class="cart-btn" onclick="addToCart(this)">Add to Cart</button>
+            <div class="added-msg" style="display:none;">Added!</div>
+        </div>
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=400&q=80" alt="Vitamin C">
+            <h3>Vitamin C</h3>
+            <p>₹120 (10 tablets)<br>Brand: Abbott</p>
+            <button class="cart-btn" onclick="addToCart(this)">Add to Cart</button>
+            <div class="added-msg" style="display:none;">Added!</div>
+        </div>
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1516822003759-2cf5aa5e3b48?auto=format&fit=crop&w=400&q=80" alt="Antacid Syrup">
+            <h3>Antacid Syrup</h3>
+            <p>₹74 (200ml)<br>Brand: Sun Pharma</p>
+            <button class="cart-btn" onclick="addToCart(this)">Add to Cart</button>
+            <div class="added-msg" style="display:none;">Added!</div>
+        </div>
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=400&q=80" alt="Pain Relief Spray">
+            <h3>Pain Relief Spray</h3>
+            <p>₹90 (60ml)<br>Brand: Dr Reddy's</p>
+            <button class="cart-btn" onclick="addToCart(this)">Add to Cart</button>
+            <div class="added-msg" style="display:none;">Added!</div>
+        </div>
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1622219405147-ccf7c8607e3f?auto=format&fit=crop&w=400&q=80" alt="Hand Sanitizer">
+            <h3>Hand Sanitizer</h3>
+            <p>₹60 (100ml)<br>Brand: Lifebuoy</p>
+            <button class="cart-btn" onclick="addToCart(this)">Add to Cart</button>
+            <div class="added-msg" style="display:none;">Added!</div>
+        </div>
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=400&q=80" alt="Thermometer">
+            <h3>Digital Thermometer</h3>
+            <p>₹160<br>Brand: Omron</p>
+            <button class="cart-btn" onclick="addToCart(this)">Add to Cart</button>
+            <div class="added-msg" style="display:none;">Added!</div>
+        </div>
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1618914873049-70cbbdbe3f98?auto=format&fit=crop&w=400&q=80" alt="Face Mask">
+            <h3>Face Mask (Pack of 10)</h3>
+            <p>₹90<br>Brand: 3M</p>
+            <button class="cart-btn" onclick="addToCart(this)">Add to Cart</button>
+            <div class="added-msg" style="display:none;">Added!</div>
+        </div>
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Glucose Powder">
+            <h3>Glucose-D Powder</h3>
+            <p>₹40 (100gm)<br>Brand: Dabur</p>
+            <button class="cart-btn" onclick="addToCart(this)">Add to Cart</button>
+            <div class="added-msg" style="display:none;">Added!</div>
+        </div>
+    </main>
+    <div style="text-align:center;">
+        <button class="btn" id="proceedPayment" onclick="goToPay()">Proceed to Payment (Cart: <span id='btnCartCount'>0</span>)</button>
+    </div>
+    <script>
+        let cartCount = 0;
+        function addToCart(btn) {
+            cartCount++;
+            document.getElementById('cartCounter').innerText = cartCount;
+            document.getElementById('btnCartCount').innerText = cartCount;
+            btn.disabled = true;
+            let msg = btn.nextElementSibling;
+            msg.style.display = 'block';
+            setTimeout(() => {msg.style.display = 'none';},850);
+            updatePayBtn();
+        }
+        function updatePayBtn() {
+            document.getElementById('proceedPayment').disabled = (cartCount === 0);
+        }
+        function goToPay() {
+            if(cartCount>0) window.location.href='payments';
+        }
+        updatePayBtn();
+    </script>
+</body>
+</html>
