@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Medico Hub – Your Trusted Medical Shop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background: linear-gradient(120deg,#f6d365,#fda085);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #3b4252;
+            color: #fff;
+            padding: 20px 30px;
+        }
+        .navbar h2 { margin:0; font-size:2.1em;}
+        .nav-links { display:flex; gap:30px;}
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: #efefef; text-decoration: underline;}
+        .hero-img {
+            margin:36px 0 24px 0;
+            width:340px;
+            border-radius:18px;
+            box-shadow: 0 6px 36px rgba(0,0,0,0.12);
+        }
+        .tagline {
+            font-size:1.35em;
+            color:#2d3140;
+            font-weight: 600;
+            margin: 27px 0 10px 0;
+        }
+        .features { display: flex; justify-content: center; gap:30px; margin:40px auto 0 auto; max-width:950px;}
+        .feature {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 4px 28px rgba(0,0,0,0.09);
+            padding: 25px 20px;
+            min-width: 210px;
+        }
+        .feature-icon { font-size:2.3em; margin-bottom:8px;}
+        .feature-title { font-weight:700; color:#3b4252;}
+        .btn {
+            margin-top:48px;
+            padding:15px 42px;
+            background: #424874;
+            color: #fff;
+            border: none;
+            border-radius:8px;
+            font-size: 1.25em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn:hover { background: #2d3140;}
+        @media (max-width:900px){
+            .features { flex-direction:column; gap:22px;}
+            .feature { width:85%; margin:0 auto;}
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h2>Medico Hub</h2>
+        <div class="nav-links">
+            <a href="index">Home</a>
+            <a href="products">Medicines</a>
+            <a href="payments">Payments</a>
+            <a href="thankyou">Thank You</a>
+        </div>
+    </div>
+    <img class="hero-img" src="https://images.unsplash.com/photo-1588776814546-875887f507d2?auto=format&fit=crop&w=800&q=80" alt="Medical Shop Image">
+    <div class="tagline">Your Trusted Partner for All Medicines and Healthcare</div>
+    <p>Genuine medicines. Expert advice. Fast delivery. All brands available!</p>
+    <button class="btn" onclick="window.location.href='products'">Shop Medicines</button>
+    <section class="features">
+        <div class="feature">
+            <div class="feature-icon">💊</div>
+            <div class="feature-title">Wide Range</div>
+            <div>Over 1500+ brands for all your health needs.</div>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">🔒</div>
+            <div class="feature-title">Trusted & Secure</div>
+            <div>Authentic medicines with fast and secure payments.</div>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">🚛</div>
+            <div class="feature-title">Express Delivery</div>
+            <div>Free same-day deliveries for local orders.</div>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">👨‍⚕️</div>
+            <div class="feature-title">Expert Guidance</div>
+            <div>Our pharmacists are ready to help you anytime.</div>
+        </div>
+    </section>
+</body>
+</html>
